@@ -1,0 +1,5 @@
+data/nh_program_cache.json
+data/pending_research_*.json
+__pycache__/
+*.pyc
+.DS_Store
