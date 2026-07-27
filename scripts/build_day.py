@@ -216,10 +216,12 @@ def render_day_page(date_iso, date_label, blocks, section_colors, db):
         span = f'{block[0]["start"]}–{block[-1]["start"]}'
         cards = "\n".join(film_card(f, i, section_colors, db, missing) for f in block)
         tag = BLOCK_TAGS[i] if i < len(BLOCK_TAGS) else f"Slot {i+1}"
+        film_word = "film" if len(block) == 1 else "films"
+        choice_note = "only one screening" if len(block) == 1 else "pick one"
         block_sections.append(f'''
     <section class="block" id="block-{i}">
       <header class="block-header">
-        <p class="block-eyebrow">{tag} &nbsp;·&nbsp; starts {span} &nbsp;·&nbsp; {len(block)} films &nbsp;·&nbsp; pick one</p>
+        <p class="block-eyebrow">{tag} &nbsp;·&nbsp; starts {span} &nbsp;·&nbsp; {len(block)} {film_word} &nbsp;·&nbsp; {choice_note}</p>
         <h2 class="block-title">{BLOCK_LABELS[i]}</h2>
       </header>
       <div class="film-list">
