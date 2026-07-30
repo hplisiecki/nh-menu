@@ -26,5 +26,9 @@
   "2026-07-31": {
     "label": "Friday, July 31",
     "films": 55
+  },
+  "2026-08-01": {
+    "label": "Saturday, August 1",
+    "films": 50
   }
 }
